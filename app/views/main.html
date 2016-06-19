@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-12">
+        <img src="http://placehold.it/700x250?text=carousel">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="http://placehold.it/200?text=item">
+            </div>
+            <div class="col-md-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div ng-if="main.auction.isLive" class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Latest Bid by
+                </h3>
+            </div>
+            <div class="panel-body">
+                <address>
+                    <strong><span id="userName" ng-bind="main.highestBid.user.name"></span></strong>,
+                    <strong><span id="userLocation" ng-bind="main.highestBid.user.location"></span></strong>
+                    <br/>
+                </address>
+                <div>
+                    <img src="http://placehold.it/100x64?text=flag">
+                </div>
+                <strong>Amount</strong> <span id="price" ng-bind="main.highestBid.price"></span>
+            </div>
+            <div class="panel-footer">
+                <button ng-click="main.placeBid()" type="button" class="btn btn-block btn-success">
+                    Commit to Bid <span id="nextBidPrice" ng-bind="main.nextBidPrice"></span>
+                </button>
+            </div>
+        </div>
+        <div ng-if="!main.auction.isLive">
+            <div class="alert alert-danger">
+                <h4>
+                    Alert!
+                </h4>
+                 Auction is not <strong>Live !!</strong>
+            </div>
+        </div>
+    </div>
+</div>
