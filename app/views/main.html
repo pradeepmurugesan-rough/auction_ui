@@ -23,13 +23,18 @@
                 </h3>
             </div>
             <div class="panel-body">
-                <address>
-                    <strong><span id="userName" ng-bind="main.highestBid.user.name"></span></strong>,
-                    <strong><span id="userLocation" ng-bind="main.highestBid.user.location"></span></strong>
-                    <br/>
-                </address>
-                <div>
-                    <img src="http://placehold.it/100x64?text=flag">
+                <div id="usersection" ng-if="main.highestBid.user">
+                    <address>
+                        <strong><span id="userName" ng-bind="main.highestBid.user.name"></span></strong>,
+                        <strong><span id="userLocation" ng-bind="main.highestBid.user.location"></span></strong>
+                        <br/>
+                    </address>
+                    <div>
+                        <img src="http://placehold.it/100x64?text=flag">
+                    </div>
+                </div>
+                <div ng-if="!main.highestBid.user">
+                    No Bids placed.
                 </div>
                 <strong>Amount</strong> <span id="price" ng-bind="main.highestBid.price"></span>
             </div>

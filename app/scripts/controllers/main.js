@@ -20,12 +20,12 @@ angular.module('auction-ui')
             console.log("data from controller");
             console.log(data);
             vm.auction = data;
-            if(!vm.auction.highestBid) {
-                vm.auction.highestBid = vm.auction.item.startingPrice;
+            vm.highestBid = vm.auction.latestBid;
+            if(!vm.highestBid) {
+                vm.highestBid = {
+                    price : vm.auction.item.startingPrice
+                };
             }
-            vm.highestBid = {
-                price : vm.auction.highestBid
-            };
             vm.nextBidPrice = vm.highestBid.price + 20;
         });
 
